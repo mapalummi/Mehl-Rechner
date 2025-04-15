@@ -9,7 +9,7 @@ Für alle betroffenen, deren Waage spontan den Geist aufgegeben hat, kurz bevor 
 
 ## 🖼️ Vorschau
 
-![Screenshot des Mehl-Rechners](./assets/Mehl-Rechner.png)
+![Screenshot des Mehl-Rechners](assets/Mehl_Rechner.png)
 
 ## 🛠️ Installation
 
