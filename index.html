@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mehl-Rechner</title>
     <link rel="stylesheet" href="style.css" />
-
-    <script src="script.js"></script>
   </head>
   <body>
     <header><h1>Mehl-Rechner</h1></header>
@@ -21,7 +19,9 @@
           max="1000"
           oninput="validity.valid||(value='');"
         />
-        <button onclick="calculateFlour()">Berechnen</button>
+        <button id="calcButton" onclick="calculateFlour()" disabled>
+          Berechnen
+        </button>
       </div>
       <div class="result_container">
         <h2>Ergebnis:</h2>
@@ -29,5 +29,6 @@
       </div>
     </div>
     <footer>MP</footer>
+    <script src="script.js"></script>
   </body>
 </html>

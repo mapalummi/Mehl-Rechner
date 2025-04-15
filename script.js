@@ -3,6 +3,33 @@
 const flour = 0.57;
 let newAmountValue;
 
+// const inputField = document.getElementById('input_field');
+// const button = document.getElementById('calcButton');
+
+// inputField.addEventListener('input', function () {
+//   if (inputField.value.trim() === '') {
+//     button.disabled = true; // Button deaktivieren
+//   } else {
+//     button.disabled = false; // Button aktivieren
+//   }
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const inputField = document.getElementById('input_field');
+  const button = document.getElementById('calcButton');
+
+  // Aktiviert den Button, wenn eine Zahl eingegeben wird
+  inputField.addEventListener('input', function () {
+    button.disabled = inputField.value.trim() === '';
+  });
+
+  // Deaktiviert den Button nach Absenden und leert das Eingabefeld
+  button.addEventListener('click', function () {
+    inputField.value = ''; // Eingabefeld leeren
+    button.disabled = true; // Button wieder deaktivieren
+  });
+});
+
 function calculateFlour() {
   getInput();
   clearInput();
