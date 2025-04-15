@@ -7,6 +7,10 @@ Für alle betroffenen, deren Waage spontan den Geist aufgegeben hat, kurz bevor 
 - Trage die gewünschte Menge an (lockerem) Mehl ein.
 - Zeigt dir das Ergebnis in frischer Farbe und in Milliliter umgerechnet an.
 
+## 🖼️ Vorschau
+
+![Screenshot des Mehl-Rechners](./assets/screenshot.png)
+
 ## 🛠️ Installation
 
 ```bash
