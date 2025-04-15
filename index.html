@@ -9,21 +9,25 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <h1>Mehl-Rechner</h1>
-    <div>
-      <input
-        id="input_field"
-        type="number"
-        placeholder="Gramm"
-        min="0"
-        max="1000"
-        oninput="validity.valid||(value='');"
-      />
-      <button onclick="calculateFlour()">Berechnen</button>
+    <header><h1>Mehl-Rechner</h1></header>
+
+    <div class="content_container">
+      <div class="input_container">
+        <input
+          id="input_field"
+          type="number"
+          placeholder="Gramm"
+          min="0"
+          max="1000"
+          oninput="validity.valid||(value='');"
+        />
+        <button onclick="calculateFlour()">Berechnen</button>
+      </div>
+      <div class="result_container">
+        <h2>Ergebnis:</h2>
+        <span id="result_field"></span>
+      </div>
     </div>
-    <div>
-      <h2>Ergebnis:</h2>
-      <span id="result_field"></span>
-    </div>
+    <footer>MP</footer>
   </body>
 </html>

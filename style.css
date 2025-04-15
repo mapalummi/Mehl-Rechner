@@ -4,21 +4,34 @@ body {
   font-family: Arial, sans-serif;
   background-color: #000;
   color: #fff;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_container {
+  min-height: calc(100vh - 200px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   text-align: center;
+}
+
+.input_container {
+}
+
+.result_container {
 }
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-div {
-  margin: 10px 0;
+  margin: 0;
 }
 
 input[type='number'] {
@@ -63,6 +76,15 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   color: #4caf50;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 480px) {
