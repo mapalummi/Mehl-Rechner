@@ -11,7 +11,14 @@
   <body>
     <h1>Mehl-Rechner</h1>
     <div>
-      <input id="input_field" type="number" placeholder="Gramm" />
+      <input
+        id="input_field"
+        type="number"
+        placeholder="Gramm"
+        min="0"
+        max="1000"
+        oninput="validity.valid||(value='');"
+      />
       <button onclick="calculateFlour()">Berechnen</button>
     </div>
     <div>

@@ -28,6 +28,6 @@ function calculateAmount() {
 function showResult(newResult) {
   document.getElementById('result_field').innerHTML = '';
   document.getElementById('result_field').innerHTML += /*html*/ `
-        <p>${newResult} Milliliter</p>
+        <p>${newResult} ml</p>
     `;
 }
