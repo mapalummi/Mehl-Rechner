@@ -2,59 +2,68 @@
 
 const flour = 0.57;
 let newAmountValue;
+const inputField = document.getElementById('input_field');
+const resultField = document.getElementById('result_field');
+const button = document.getElementById('calcButton');
 
-// const inputField = document.getElementById('input_field');
-// const button = document.getElementById('calcButton');
-
-// inputField.addEventListener('input', function () {
-//   if (inputField.value.trim() === '') {
-//     button.disabled = true; // Button deaktivieren
-//   } else {
-//     button.disabled = false; // Button aktivieren
-//   }
-// });
-
-document.addEventListener('DOMContentLoaded', function () {
-  const inputField = document.getElementById('input_field');
-  const button = document.getElementById('calcButton');
-
-  // Aktiviert den Button, wenn eine Zahl eingegeben wird
-  inputField.addEventListener('input', function () {
-    button.disabled = inputField.value.trim() === '';
-  });
-
-  // Deaktiviert den Button nach Absenden und leert das Eingabefeld
-  button.addEventListener('click', function () {
-    inputField.value = ''; // Eingabefeld leeren
-    button.disabled = true; // Button wieder deaktivieren
-  });
-});
+// Event-Listener für Echtzeit-Updates
+inputField.addEventListener('input', toggleButton);
+button.addEventListener('click', calculateFlour);
 
 function calculateFlour() {
   getInput();
-  clearInput();
+
+  // Debugging: Wert aus dem Eingabefeld prüfen
+  console.log('Eingabewert:', newAmountValue);
+
+  if (isNaN(newAmountValue) || newAmountValue <= 0) {
+    resultField.innerHTML = `<p>Bitte eine gültige Zahl eingeben</p>`;
+    return;
+  }
+
   calculateAmount();
+  clearAndDisable();
+}
+
+function toggleButton() {
+  // Button aktivieren/deaktivieren, basierend auf dem Eingabewert
+  const value = inputField.value.trim();
+  button.disabled = value === '' || isNaN(parseFloat(value));
 }
 
 function getInput() {
-  let amountValue = document.getElementById('input_field').value;
-  newAmountValue = parseInt(amountValue);
+  // Wert des Input-Feldes auslesen und in eine Zahl umwandeln
+  const inputFieldValue = inputField.value.trim();
+
+  // Debugging: Rohwert aus dem Input-Feld anzeigen
+  console.log('Rohwert aus Input-Feld:', inputFieldValue);
+
+  // Wert in eine Zahl umwandeln
+  newAmountValue = parseFloat(inputFieldValue);
+
+  // Debugging: Geparster Wert prüfen
+  console.log('Geparster Wert:', newAmountValue);
+
+  // Überprüfen, ob der Wert leer oder ungültig ist
+  if (inputFieldValue === '') {
+    console.log('Eingabefeld ist leer.');
+  }
+  if (isNaN(newAmountValue)) {
+    console.log('Der Wert ist keine gültige Zahl:', inputFieldValue);
+  }
 }
 
-function clearInput() {
-  document.getElementById('input_field').value = '';
+function clearAndDisable() {
+  button.disabled = true;
 }
 
 function calculateAmount() {
-  let result = newAmountValue / flour;
-  let newResult = Math.round(result);
+  const result = newAmountValue / flour;
+  const newResult = Math.round(result);
 
   showResult(newResult);
 }
 
 function showResult(newResult) {
-  document.getElementById('result_field').innerHTML = '';
-  document.getElementById('result_field').innerHTML += /*html*/ `
-        <p>${newResult} ml</p>
-    `;
+  resultField.innerHTML = `<p>${newResult} ml</p>`;
 }
